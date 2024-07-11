@@ -1,51 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link  href="tailwind.config.js">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="tailwind.config.js">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="h-[200000px]">
+
+<body class="relative">
+  
   <!-- Navigation Bar -->
-      <nav class="flex items-center justify-between p-4 sticky top-0 z-20 bg-white bg-opacity-80 backdrop-blur-md">
-        <div class="font-bold text-3xl ml-[60px] sm:flex hidden "><span>&lt;SS/&gt;</span></div>
-        <ul class="flex list-none mr-10 p-0 text-gray-500">
-          <li class="ml-8">About</li>
-          <li class="ml-8" >Work</li>
-          <li class="ml-8">Testimonials</li>
-          <li class="ml-8">Contact</li>
-          <li class="ml-8">
-            <div class="w-px h-6 bg-gray-300"></div>
-          </li>
-          <li class="ml-8"><img src="images/Icon.png" alt=""></li>
-          <li class="ml-8 mr-[30px] w-[136px] h-[36px] bg-gray-900 rounded-[12px]  text-gray-50"><button class="flex items-center justify-center w-full h-full" >Download CV</button></li>
-        </ul>
-      </nav>
+  <nav class="flex items-center justify-between p-4 sticky top-0 z-20 bg-white bg-opacity-80 backdrop-blur-md">
+    <div class="font-bold text-3xl ml-[60px]"><span>&lt;SS/&gt;</span></div>
+    <ul class="list-none mr-10 p-0 text-gray-500 hidden sm:flex">
+      <li class="ml-8">About</li>
+      <li class="ml-8">Work</li>
+      <li class="ml-8">Testimonials</li>
+      <li class="ml-8">Contact</li>
+      <li class="ml-8">
+        <div class="w-px h-6 bg-gray-300"></div>
+      </li>
+      <li class="ml-8"><img src="images/Icon.png" alt=""></li>
+      <li class="ml-8 mr-[30px] w-[136px] h-[36px] bg-gray-900 rounded-[12px]  text-gray-50"><button
+          class="flex items-center justify-center w-full h-full">Download CV</button></li>
+    </ul>
+    <div class="flex sm:hidden cursor-pointer group" id="toggleMobileMenu">
+      <i class="fa-solid fa-bars group-hover:rotate-90 text-gray-800  transition-all duration-500 ease-in-out text-2xl"></i>
+    </div>
+    
+  </nav>
+  <div class="bg-white absolute top-0 z-50 right-0 w-fit flex justify-end ml-auto translate-x-full transition-all duration-500 ease-in-out" id="targetElement">
+    <ul class="list-none sm:hidden mr-10 pr-10 text-gray-500" id="mobileMenu">
+      <li class="ml-8">About</li>
+      <li class="ml-8">Work</li>
+      <li class="ml-8">Testimonials</li>
+      <li class="ml-8">Contact</li>
+    </ul>
+  </div>
 
-      <!-- HERO SECTION -->
-       <div class="flex justify-between mt-28 px-20">
-        <div>
-          <SPan class="font-extrabold text-5xl flex">Hi, I’m Sagar <div>👋</div></SPan>
-          <P class="w-[768px] h-[72px] my-[20px]">
-            I'm a full stack developer (React.js & Node.js) with a focus on creating (and occasionally designing) exceptional digital experiences that are fast, accessible, visually appealing, and responsive. Even though I have been creating web applications for over 7 years, I still love it as if it was something new.
-          </P>
-          <SPan class="flex "><img src="images/3.png" class="mr-1">Ahmedabad, India</SPan>
-          <SPan class="flex my-5"><img src="images/1.png" class="mr-1">Available for new projects</SPan>
-          <SPan class="flex">
-            <img src="images/git.png" alt="">
-            <img src="images/twitter.png" alt="">
-            <img src="images/figma.png" alt="">
-          </SPan>
-        </div>
-        <div>
-          <div class="w-[280px] h-[320px] bg-gray-300">
-            <img src="images/Pic.png" class="relative -top-10 -left-10">
-          </div>
-        </div>
-       </div>
+  <!-- HERO SECTION -->
+  <div class="flex justify-between mt-28 px-20">
+    <div>
+      <SPan class="font-extrabold text-5xl flex">Hi, I’m Sagar <div>👋</div></SPan>
+      <P class="w-[768px] h-[72px] my-[20px]">
+        I'm a full stack developer (React.js & Node.js) with a focus on creating (and occasionally designing)
+        exceptional digital experiences that are fast, accessible, visually appealing, and responsive. Even though I
+        have been creating web applications for over 7 years, I still love it as if it was something new.
+      </P>
+      <SPan class="flex "><img src="images/3.png" class="mr-1">Ahmedabad, India</SPan>
+      <SPan class="flex my-5"><img src="images/1.png" class="mr-1">Available for new projects</SPan>
+      <SPan class="flex">
+        <img src="images/git.png" alt="">
+        <img src="images/twitter.png" alt="">
+        <img src="images/figma.png" alt="">
+      </SPan>
+    </div>
+    <div>
+      <div class="w-[280px] h-[320px] bg-gray-300">
+        <img src="images/Pic.png" class="relative -top-10 -left-10">
+      </div>
+    </div>
+  </div>
 
+
+  <script>
+    const GET_TOGGLE_BUTTON = document.getElementById('toggleMobileMenu');
+    const targetElement = document.getElementById('targetElement');
+
+    GET_TOGGLE_BUTTON.addEventListener('click', (e) => {
+      targetElement.classList.remove('translate-x-full')
+    });
+
+  </script>
 </body>
+
 </html>
